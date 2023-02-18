@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 import scapy.all as scapy
 import argparse
@@ -34,7 +34,7 @@ def scan(ip, timeout_value):
 
     # Does both
     arp_request_broadcast = broadcast/arp_request
-    # Checks the MACs that answered
+    # Checks the MACs that answered two lists answered, not-answered and they divide into lists of answers like of we print the [0] one it is going to give us the first ip that it founds
     answered_list = scapy.srp(arp_request_broadcast, timeout=timeout_value, verbose=False)[0]
     return answered_list
 
